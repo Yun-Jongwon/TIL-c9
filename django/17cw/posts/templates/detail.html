@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Post detail</h1>
+    <h2>name:{{post.name}}</h2>
+    <p>email:{{post.email}}</p>
+    <p>birthday:{{post.birthday}}</p>
+    <p>age:{{post.age}}</p>
+    <a href="/posts/">List</a>
+    <a href="/posts/{{post.pk}}/edit">edit</a>
+    <a href="/posts/{{post.pk}}/delete">Delete</a>
+    
+    
+</body>
+</html>

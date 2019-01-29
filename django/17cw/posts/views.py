@@ -11,10 +11,12 @@ def new(request):
     
     
 def create(request):
-    title=request.POST.get('title')
-    content=request.POST.get('content')
+    name=request.POST.get('name')
+    email=request.POST.get('email')
+    birthday=request.POST.get('birthday')
+    age=request.POST.get('age')
     
-    post=Post(title=title,content=content)
+    post=Post(name=name,email=email,birthday=birthday,age=age)
     post.save()
     
     return redirect(f'/posts/{post.pk}/')
@@ -57,9 +59,12 @@ def edit(request,post_id):
 def update(request,post_id):
     #수정하는 코드
     post=Post.objects.get(pk=post_id)
-    post.title=request.POST.get('title')
-    post.content=request.POST.get('content')
+    post.name=request.POST.get('name')
+    post.email=request.POST.get('email')
+    post.birthday=request.POST.get('birthday')
+    post.age=request.POST.get('age')
     post.save()
+    
     return redirect(f'/posts/{post.id}/')
 
 
