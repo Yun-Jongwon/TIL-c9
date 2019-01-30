@@ -9,6 +9,45 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     
+
+#Post : Comment = 1:N   
+# Foreignkey 는 1:N 중에 N 쪽에 작성
+class Comment(models.Model):
+    post=models.ForeignKey(Post, on_delete=models.CASCADE)
+    #Post에서 가져왔기 때문에 소문자 post로 꼭 써야함 장고에서 정함
+    content=models.TextField()
+    
+    # on_delete 옵션
+    #1.CASCADE : 부모가 삭제되면, 자기 자신도삭제.
+    #2.PROTECT : 자식이 존재하면, 부모삭제 불가능.
+    #3.SET_NULL : 부모가 삭제되면, 자식의 부모 정보를 NULL로 변경
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #1.Create
 #post=Post(title='hello',content='world!')
 #post.save()
