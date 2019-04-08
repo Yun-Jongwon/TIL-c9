@@ -22,7 +22,7 @@ app_name='posts'
 
 urlpatterns = [
     # path('naver/<str:q>/',views.naver),
-    # path('github/<str:username>',views.github),
+    # path('github/<str:username>',views.github),o
     path('',views.index,name='list'), # GET
     # path('create/',views.create,name='create'), # POST(create)
     path('write/',views.new,name='new'), # GET,POST

@@ -27,10 +27,10 @@ def login(request):
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
             auth_login(request, form.get_user())
-            return redirect('posts:list')
+            return redirect(request.GET.get('next') or 'posts:list')
     else:
         form=AuthenticationForm()
-    
+      #=>/posts/write
     return render(request, 'login.html', {'form':form})
     
     
