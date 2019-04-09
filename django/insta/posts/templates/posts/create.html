@@ -3,7 +3,8 @@
 {% block container %}
 
 <h1>New Post</h1>
-<form method="post">
+<form method="post" enctype="multipart/form-data">
+    <!--이미지 넣을때는  enctype해줘야함-->
     {% csrf_token %}
     {% bootstrap_form post_form %}
     {%buttons%}
