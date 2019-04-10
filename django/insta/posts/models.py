@@ -1,6 +1,7 @@
 from django.db import models
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
+from django.conf import settings
 
 
 def post_image_path(instance,filename):
@@ -14,6 +15,7 @@ def post_image_path(instance,filename):
 
 # Create your models here.
 class Post(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE) #cascade,set_null 등 삭제되었을때 어떻게 처리할지 '시험'
     content=models.TextField()
     # image=models.ImageField(blank=True)
     image=ProcessedImageField(
