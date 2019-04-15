@@ -7,6 +7,7 @@
     <!--이미지 넣을때는  enctype해줘야함-->
     {% csrf_token %}
     {% bootstrap_form post_form %}
+    {{image_formset.as_p}}
     {%buttons%}
         <button type="submit" class='btn btn-primary'>submit</button>
     {%endbuttons%}
