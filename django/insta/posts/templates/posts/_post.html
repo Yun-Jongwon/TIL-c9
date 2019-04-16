@@ -1,7 +1,11 @@
 
 <div class="card" style="width: 18rem;">
   <div class='card-header'>
-    <span>{{post.user.username}}</span>
+    {% if post.user.profile.image %}
+              <img src="{{post.user.profile.image.url}}" width="30"alt="{{post.user.profile.image.url}}"></img>
+  {% endif %}
+    <a href="{% url 'people' post.user.username %}"><span>{{post.user.username}}</span></a>
+    
     
   </div>
   
