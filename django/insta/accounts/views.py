@@ -41,7 +41,33 @@ def login(request):
 def logout(request):
     auth_logout(request)
     return redirect('posts:list')
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def people(request,username):
     #get_user_model() => User
     people=get_object_or_404(get_user_model(),username=username)
